@@ -82,6 +82,7 @@
         });
         _this.el.parentElement.replaceChild(newEl, _this.el);
         _this.el = newEl;
+        _this.bind();
         if (_this.options['imageload']) {
           return _this.options['imageload'](resizer.image(), _this.el);
         }

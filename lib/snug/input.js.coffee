@@ -27,6 +27,7 @@ class @Snug.Input
           className: @el.className
       @el.parentElement.replaceChild(newEl, @el)
       @el = newEl
+      @bind()
       @options['imageload'](resizer.image(), @el) if @options['imageload']
 
   createNode: (name, attrs={}) ->
