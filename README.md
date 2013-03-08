@@ -52,7 +52,7 @@ The data sent is in the format "data:`mime_type`;base64,`base64_encoded_data`".
 Ruby on Rails example of saving this information into a file:
 
 ```
-match, mime, encoded = *data.match(/^data:(.+\/.+);base64,(.*)/)
+match, mime, encoded = *params[:my_image].match(/^data:(.+\/.+);base64,(.*)/)
 	ext = MIME::Types[mime].first.extensions.first
 	path = Dir::tmpdir + "mypic." + ext
 	File.open(path, 'wb') do |f|
@@ -97,3 +97,4 @@ MIT. See license file.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
